@@ -11,7 +11,12 @@
    
    <p th:text = "'Time on Server:::' + 	${theDate}" class = funny/>
    Time on Server(span) : <span th:text="${theDate}" class = funny></span>
+   
+    <br>
+    <br>
+	<a th:href="@{/employees/list}">Go to List</a>
+	<br>
+	<a th:href="@{/}">Back to Home</a>
 
 </body>
 </html>
-	

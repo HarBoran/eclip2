@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+   <title>WelcomePage</title>
+   <link rel="stylesheet" th:href = "@{/css/demo.css}"/>
+</head>
+
+<body>
+
+	<h1>WelcomePage</h1>
+	<hr>
+	<a th:href="@{/hello}">Go to Hello</a>
+    <br>
+	<a th:href="@{/employees/list}">Go to List</a>
+
+</body>
+</html>
