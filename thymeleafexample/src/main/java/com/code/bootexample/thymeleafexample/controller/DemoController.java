@@ -10,10 +10,10 @@ import com.code.bootexample.thymeleafexample.entity.Employee;
 @Controller
 public class DemoController {
 	
-	@GetMapping("/")
-	public String WelcomePage() {
-		return "welcomepage";
-	}
+//	@GetMapping("/")
+//	public String WelcomePage() {
+//		return "welcomepage";
+//	}
 
 	@GetMapping("/hello")
 	public String sayHello(Model theModel) {
