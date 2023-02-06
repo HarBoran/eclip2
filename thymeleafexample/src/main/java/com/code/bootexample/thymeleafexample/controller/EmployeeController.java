@@ -76,9 +76,13 @@ public class EmployeeController {
 		return "redirect:/";
 	}
 	
-	@GetMapping("/delete")
-	private String delete(@ModelAttribute("employee") Employee employee) {
+	//@GetMapping("/delete")
+	@RequestMapping(value="/delete" , method = {RequestMethod.GET, RequestMethod.POST})
+	private String delete(@ModelAttribute("employee") Employee employee, @RequestParam(value = "employeeId", defaultValue="0") int theId) {
 		employeeService.delete(employee);
+		if ((theId != 0)) {
+			employeeService.deleteById(theId);
+		}
 		return "redirect:/";
 	}
 	

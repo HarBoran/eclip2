@@ -35,16 +35,32 @@
 					<td th:text="${tempEmployee.lastName}" />
 					<td th:text="${tempEmployee.email}" />
 					<td>
+						<div class ="row">
+							<div class="col-small">
+								<form action="#" th:action="@{/employees/showFormForUpdate}" method="POST">
+									<input type="hidden" name="id" th:value="${tempEmployee.id}"/>
+									<button type="submit" class="btn btn-success btn-sm">Update form</button>
+								</form>
+							</div>
+							<div class="col-small">
+								<a th:href="@{/employees/showFormForUpdate(id=${tempEmployee.id})}" class="btn btn-primary btn-sm">Update href</a>
+							</div>
 					
-					<form action="#" th:action="@{/employees/showFormForUpdate}" method="POST">
-						<input type="hidden" name="id" th:value="${tempEmployee.id}"/>
-						<button type="submit" class="btn btn-success btn-sm">Update form</button>
-					</form>
+							<div class="col-small">
+								<form action="#" th:action="@{/employees/delete}" method = "POST">
+									<input type="hidden" name ="employeeId" th:value="${tempEmployee.id}"/>
+									<button type = "submit" class  = "btn btn-warning btn-sm" 
+										onclick ="if (!(confirm('Sure to delete this employee?'))) return false">
+										Delete form
+									</button>								
+								</form>
+							</div>
+							<div class="col-small">
+								<a th:href="@{/employees/delete(id=${tempEmployee.id})}" class="btn btn-danger btn-sm">Delete href</a>
+							</div>
+						</div>
+					</td>
 					
-					<a th:href="@{/employees/showFormForUpdate(id=${tempEmployee.id})}" class="btn btn-primary btn-sm">Update href</a>
-			
-					<a th:href="@{/employees/delete(id=${tempEmployee.id})}" class="btn btn-danger">Delete</a></td>
-
 				</tr>
 			</tbody>
 		</table>
